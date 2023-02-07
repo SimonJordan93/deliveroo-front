@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f3f5f5;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 96vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  color: #2e3333;
+  font-size: 2rem;
+  font-family: "Stratos Deliveroo Web";
+  margin-top: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: #2e3333;
+  font-size: 1.5rem;
+  font-family: "Stratos Deliveroo Web";
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #2e3333;
+  font-size: 1.2rem;
+  font-family: "IBM Plex Sans";
+  margin-bottom: 0.6rem;
+}
+
+/* ****************** */
+/* **   HEADER        ** */
+/* ****************** */
+header {
+  background-color: white;
+}
+
+.logo-section {
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+header .container {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo {
+  width: 155px;
+}
+
+.restaurant-info {
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.restaurant-info-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.restaurant-info-text p {
+  color: #868a8a;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.restaurant-info-header {
+  width: 350px;
+  border-radius: 5px;
+}
+
+/* ****************** */
+/* **   CONTENT      ** */
+/* ****************** */
+
+.content {
+  display: flex;
+}
+
+.menu {
+  /* border: 1px solid black; */
+  width: 100%;
+}
+
+.category-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.category-items button {
+  border: none;
+}
+
+.category-items button:hover {
+  box-shadow: 0px 20px 20px rgba(160, 160, 160, 0.2);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.category-item {
+  background-color: white;
+  height: 160px;
+  width: 400px;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.item-description {
+  flex: 1;
+  text-align: left;
+}
+
+.item-description p,
+.price {
+  color: #b0b0b0;
+}
+
+.price {
+  font-size: 1rem;
+}
+
+.item-description p {
+  font-size: 0.9rem;
+}
+
+.about-food::-webkit-scrollbar {
+  display: none;
+}
+
+.about-food {
+  scrollbar-width: none;
+}
+
+.about-food {
+  height: 45px;
+  overflow-y: scroll;
+  margin-bottom: 1rem;
+}
+
+.item-img {
+  /* border: 1px solid black; */
+  height: 130px;
+  width: 130px;
+}
+
+.item-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.popular {
+  margin-left: 10px;
+  color: #ff8000;
+  font-weight: bold;
+}
+
+.cart {
+  border: 1px solid black;
+  width: 500px;
+}
+
+/* ****************** */
+/* **   RESPONSIVE DESIGN      ** */
+/* ****************** */
+
+@media (max-width: 1225px) {
+  .category-item {
+    width: 100%;
   }
 }
