@@ -89,6 +89,8 @@ header .container {
   display: flex;
 }
 
+/**** MENU **** */
+
 .menu {
   /* border: 1px solid black; */
   width: 100%;
@@ -106,7 +108,7 @@ header .container {
 
 .category-items button:hover {
   box-shadow: 0px 20px 20px rgba(160, 160, 160, 0.2);
-  transition-duration: 0.5s;
+  transition-duration: 0.7s;
   cursor: pointer;
 }
 
@@ -149,7 +151,7 @@ header .container {
 .about-food {
   height: 45px;
   overflow-y: scroll;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .item-img {
@@ -170,6 +172,8 @@ header .container {
   font-weight: bold;
 }
 
+/**** CART **** */
+
 .cart {
   border: 1px solid black;
   width: 500px;
@@ -182,5 +186,14 @@ header .container {
 @media (max-width: 1225px) {
   .category-item {
     width: 100%;
+  }
+}
+
+@media (max-width: 788px) {
+  .content {
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 25px; */
+    flex-direction: column;
   }
 }

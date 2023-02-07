@@ -44,36 +44,38 @@ function App() {
           <div className="content container">
             <div className="menu">
               {data.categories.map((elem) => {
-                return (
-                  <div className="category">
-                    <h2>{elem.name}</h2>
-                    <div className="category-items">
-                      {elem.meals.map((item) => {
-                        return (
-                          <button className="category-item">
-                            <div className="item-description">
-                              <h3>{item.title}</h3>
-                              {item.description && (
-                                <div className="about-food">
-                                  <p>{item.description}</p>
+                if (elem.meals.length !== 0) {
+                  return (
+                    <div className="category">
+                      <h2>{elem.name}</h2>
+                      <div className="category-items">
+                        {elem.meals.map((item) => {
+                          return (
+                            <button className="category-item">
+                              <div className="item-description">
+                                <h3>{item.title}</h3>
+                                {item.description && (
+                                  <div className="about-food">
+                                    <p>{item.description}</p>
+                                  </div>
+                                )}
+                                <span className="price">{item.price} €</span>{" "}
+                                <span className="popular">
+                                  {item.popular ? "⭐️ Populaire" : ""}
+                                </span>
+                              </div>
+                              {item.picture && (
+                                <div className="item-img">
+                                  <img src={item.picture} alt="" />
                                 </div>
                               )}
-                              <span className="price">{item.price} €</span>{" "}
-                              <span className="popular">
-                                {item.popular ? "⭐️ Populaire" : ""}
-                              </span>
-                            </div>
-                            {item.picture && (
-                              <div className="item-img">
-                                <img src={item.picture} alt="" />
-                              </div>
-                            )}
-                          </button>
-                        );
-                      })}
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                );
+                  );
+                }
               })}
             </div>
             <div className="cart"></div>
