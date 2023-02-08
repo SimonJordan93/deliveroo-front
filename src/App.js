@@ -10,12 +10,16 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        "https://site--deliveroo-back--6h6hqnm2zbqs.code.run/"
-      );
-      // console.log(response.data);
-      setData(response.data);
-      setIsLoading(false);
+      try {
+        const response = await axios.get(
+          "https://site--deliveroo-back--6h6hqnm2zbqs.code.run/"
+        );
+        // console.log(response.data);
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
     };
     fetchData();
   }, []);
@@ -43,15 +47,15 @@ function App() {
           </header>
           <div className="content container">
             <div className="menu">
-              {data.categories.map((elem) => {
+              {data.categories.map((elem, index) => {
                 if (elem.meals.length !== 0) {
                   return (
-                    <div className="category">
+                    <div className="category" key={index}>
                       <h2>{elem.name}</h2>
                       <div className="category-items">
                         {elem.meals.map((item) => {
                           return (
-                            <button className="category-item">
+                            <button className="category-item" key={item.id}>
                               <div className="item-description">
                                 <h3>{item.title}</h3>
                                 {item.description && (
@@ -75,6 +79,8 @@ function App() {
                       </div>
                     </div>
                   );
+                } else {
+                  return null;
                 }
               })}
             </div>
